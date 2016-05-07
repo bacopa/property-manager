@@ -1,0 +1,32 @@
+ <a href="#/properties">Properties</a>
+
+<h3>{{prop.name}}</h3>
+<h4>Address: {{prop.address}}</h4>
+<h4>Property Type: {{prop.type}}</h4>
+<h4>Number of Vacancies: {{prop.vacancies}}</h4>
+<h4>Number of units: {{prop.units}}</h4>
+
+<table>
+	<thead>
+		<th>
+			
+		</th>
+	</thead>
+</table>	
+
+
+<div class="tenants-div">
+	<table>
+		<thead>
+			<th>
+				Tenants
+			</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="tenant in prop.tenants">
+				<td>{{ tenant.name }}</td>
+				<td><button ui-sref="detailTenant({id: tenant._id})">details</button></td> 
+			</tr>
+		</tbody>
+	</table>
+</div>

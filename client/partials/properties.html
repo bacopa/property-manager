@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="./static/style.css"> 
+<a ui-sref="newProperty"> New Property</a>
+
+<table>
+	
+	<thead>
+		<tr>
+			<th ng-click="sortBy('name')">Name</th>
+			<th ng-click="sortBy('address')">Address</th>
+			<th ng-click="sortBy('type')">Type</th>
+			<th ng-click="sortBy('units')">Units</th>
+			<th ng-click="sortBy('vacancies')">Vacancies</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="obj in properties | orderBy: column track by $index">
+			<td> {{ obj.name }} </td>
+			<td> {{ obj.address }} </td>
+			<td> {{ obj.type }} </td>
+			<td> {{ obj.units }} </td>
+			<td> {{ obj.vacancies }} </td>
+			<td> <button class="btn-primary" ui-sref="detailProperties({id: obj._id})">View / Edit / Delete</button> </td>
+		</tr>
+	</tbody>
+
+</table>
